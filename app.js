@@ -74,11 +74,11 @@ app.all('*', (re, res, next)=>{
     next(new ExpressError('Page not Found', 404))
 })
 
-app.use((err, req, res, next)=>{
-    const {statusCode = 500, message = 'Something went wrong'} = err;
-    res.status(statusCode).send(message)
-    
-})
+app.use((err, req, res, next) => {
+    const { statusCode = 500 } = err;
+    if (!err.message) err.message = 'Oh No, Something Went Wrong!'
+    res.status(statusCode).render('error', { err })
+}) 
 
 app.listen(3000, ()=>{
     console.log('Serving on port 3000')
