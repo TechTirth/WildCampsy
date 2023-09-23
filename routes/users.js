@@ -50,5 +50,5 @@ router.post('/login',
             res.redirect('/campgrounds');
         });
     });
-
+    
 module.exports = router;
