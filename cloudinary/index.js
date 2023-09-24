@@ -9,8 +9,11 @@ cloudinary.config({
 
 const storage = new CloudinaryStorage({
     cloudinary,
-    folder: 'WildCampsy',
-    allowedFormats: ['jpeg', 'png', 'jpg']
+    params: {
+        folder: 'WildCampsy',
+        allowedFormats: ['jpeg', 'png', 'jpg']
+    }
+    
 })
 
 module.exports = {
