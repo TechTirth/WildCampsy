@@ -26,6 +26,10 @@ const seedDB = async()=>{
             title: `${sample(descriptors)} ${sample(places)}`,
             description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error dicta magnam, quos iusto tenetur necessitatibus eum quod, minus sapiente obcaecati aut deserunt nihil nobis, ullam veniam nostrum harum ratione dolore.',
             price,
+            geometry: { 
+              type: 'Point', 
+              coordinates: [ 72.579707, 23.021624 ] 
+            },
             images: [
                 {
                   url: 'https://res.cloudinary.com/dxbznqpea/image/upload/v1695574028/WildCampsy/igbp4bmz9ttl9owk6fzp.jpg',
