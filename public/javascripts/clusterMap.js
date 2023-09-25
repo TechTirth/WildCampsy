@@ -4,7 +4,7 @@ mapboxgl.accessToken = mapToken;
 const map = new mapboxgl.Map({
 container: 'map',
 // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-style: 'mapbox://styles/mapbox/dark-v11',
+style: 'mapbox://styles/mapbox/light-v10',
 center: [75.85011280353127,22.72426830986286],
 zoom: 3
 });
@@ -37,20 +37,20 @@ paint: {
 'circle-color': [
 'step',
 ['get', 'point_count'],
-'#51bbd6',
-100,
-'#f1f075',
-750,
-'#f28cb1'
+'#00BCD4',
+10,
+'#2196F3',
+30,
+'#3F51B5'
 ],
 'circle-radius': [
 'step',
 ['get', 'point_count'],
+15,
+10,
 20,
-100,
 30,
-750,
-40
+25
 ]
 }
 });
@@ -86,7 +86,7 @@ const features = map.queryRenderedFeatures(e.point, {
 layers: ['clusters']
 });
 const clusterId = features[0].properties.cluster_id;
-map.getSource('campgrounds').getClusterExpansionZoom(
+map.getSource('campground').getClusterExpansionZoom(
 clusterId,
 (err, zoom) => {
 if (err) return;
