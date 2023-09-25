@@ -8,6 +8,8 @@ style: 'mapbox://styles/mapbox/light-v10',
 center: [75.85011280353127,22.72426830986286],
 zoom: 3
 });
+
+map.addControl(new mapboxgl.NavigationControl());
  
 map.on('load', () => {
 // Add a new source from our GeoJSON data and
